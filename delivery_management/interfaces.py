@@ -26,3 +26,13 @@ class DeliveryManagementPlatform(ABC):
         pass
 
 
+class FeatureFlaggingPlatform(ABC):
+    @abstractmethod
+    def get_feature_flag_status(self):
+        pass
+
+    @abstractmethod
+    def get_feature_flag_value(self):
+        pass
+
+

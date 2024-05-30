@@ -1,4 +1,4 @@
-from .interfaces import DeliveryManagementPlatform
+from .interfaces import DeliveryManagementPlatform,FeatureFlaggingPlatform
 
 class DeliveryManagementController():
     def __init__(self,delivery_platform:DeliveryManagementPlatform):
@@ -21,5 +21,17 @@ class DeliveryManagementController():
 
     def track_delivery_in_real_time(self):
         return self.delivery_platform.track_delivery_in_real_time()
+    
+
+class FeatureFlagManagementController():
+    def __init__(self,feature_flag_platform:FeatureFlaggingPlatform):
+        self.feature_flag_platform = feature_flag_platform
+
+    def get_feature_flag_status(self,flag_value):
+        return self.feature_flag_platform.get_feature_flag_status(flag_value)
+    
+    def get_feature_flag_value(self,flag_value):
+        return self.feature_flag_platform.get_feature_flag_value(flag_value)
+
     
 
